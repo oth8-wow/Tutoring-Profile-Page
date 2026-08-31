@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omar Hathat — IB Tutor & Engineer</title>
+    <meta
+      name="description"
+      content="Omar Hathat — IB Tutor & Engineer. Remote tutoring in IB Mathematics, Physics, Chemistry, and Business Management."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --forest: #1b4332;
+        --forest-light: #2d6a4f;
+        --cream: #faf7f0;
+        --sand: #f5f1e8;
+        --gold: #b08d57;
+        --ink: #1f2d28;
+        --radius: 1rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        color: var(--forest);
+        line-height: 1.15;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          padding: 0 2rem;
+        }
+      }
+
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.6rem 1.25rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: var(--forest);
+        color: var(--cream);
+      }
+      .btn-primary:hover {
+        background: var(--forest-light);
+      }
+
+      .btn-outline {
+        border-color: rgba(27, 67, 50, 0.25);
+        color: var(--forest);
+      }
+      .btn-outline:hover {
+        background: rgba(27, 67, 50, 0.05);
+      }
+
+      .icon {
+        width: 1.1rem;
+        height: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      /* ===== Header ===== */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(250, 247, 240, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(27, 67, 50, 0.1);
+      }
+
+      .nav {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--forest);
+        letter-spacing: -0.01em;
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        font-size: 0.875rem;
+        color: rgba(31, 45, 40, 0.7);
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--forest);
+      }
+
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--forest);
+        cursor: pointer;
+        padding: 0.25rem;
+      }
+      .menu-toggle svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem 1.25rem 1.5rem;
+        background: var(--cream);
+        border-top: 1px solid rgba(27, 67, 50, 0.1);
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        color: rgba(31, 45, 40, 0.8);
+        padding: 0.25rem 0;
+      }
+      .mobile-menu .btn {
+        justify-content: center;
+        margin-top: 0.25rem;
+        padding: 0.65rem 1.25rem;
+      }
+
+      @media (min-width: 768px) {
+        .nav-links {
+          display: flex;
+        }
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      /* ===== Hero ===== */
+      #home {
+        padding: 2.5rem 0 3rem;
+      }
+      @media (min-width: 640px) {
+        #home {
+          padding: 4rem 0 5rem;
+        }
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 2rem;
+        align-items: center;
+      }
+      @media (min-width: 768px) {
+        .hero-grid {
+          grid-template-columns: auto 1fr;
+          gap: 3rem;
+        }
+      }
+
+      /* REPLACE with your professional headshot — swap this div for an <img> */
+      .headshot {
+        width: 10rem;
+        height: 13rem;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, var(--forest), var(--forest-light));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        box-shadow: 0 10px 25px rgba(27, 67, 50, 0.2);
+        outline: 1px solid rgba(27, 67, 50, 0.2);
+        outline-offset: -1px;
+      }
+      .headshot svg {
+        width: 4rem;
+        height: 4rem;
+        color: rgba(250, 247, 240, 0.4);
+        stroke-width: 1.2;
+      }
+      @media (min-width: 768px) {
+        .headshot {
+          width: 13rem;
+          height: 16rem;
+          margin: 0;
+        }
+      }
+
+      .hero h1 {
+        font-size: 1.875rem;
+        margin-top: 0.75rem;
+      }
+      @media (min-width: 640px) {
+        .hero h1 {
+          font-size: 2.25rem;
+        }
+      }
+      @media (min-width: 768px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+      }
+
+      .hero .tagline {
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: rgba(31, 45, 40, 0.75);
+        max-width: 36rem;
+      }
+      @media (min-width: 640px) {
+        .hero .tagline {
+          font-size: 1.125rem;
+        }
+      }
+
+      .hero-actions {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      /* ===== Credentials ===== */
+      .credentials {
+        margin-top: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+      @media (min-width: 768px) {
+        .credentials {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 1rem;
+        }
+      }
+      .cred {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(27, 67, 50, 0.1);
+        border-radius: 0.75rem;
+        padding: 0.75rem 0.9rem;
+      }
+      .cred svg {
+        width: 1rem;
+        height: 1rem;
+        color: var(--gold);
+        flex-shrink: 0;
+      }
+      .cred span {
+        font-size: 0.8125rem;
+        color: rgba(31, 45, 40, 0.75);
+      }
+
+      /* ===== Subjects ===== */
+      #subjects {
+        background: rgba(245, 241, 232, 0.6);
+        border-top: 1px solid rgba(27, 67, 50, 0.1);
+        border-bottom: 1px solid rgba(27, 67, 50, 0.1);
+        padding: 3rem 0;
+      }
+      @media (min-width: 640px) {
+        #subjects {
+          padding: 4rem 0;
+        }
+      }
+      #subjects h2 {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+      }
+      @media (min-width: 640px) {
+        #subjects h2 {
+          font-size: 1.875rem;
+        }
+      }
+
+      .subject-grid {
+        margin-top: 2rem;
+        display: grid;
+        gap: 1.25rem;
+      }
+      @media (min-width: 640px) {
+        .subject-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .subject-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .card {
+        background: var(--cream);
+        border: 1px solid rgba(27, 67, 50, 0.1);
+        border-radius: 1rem;
+        padding: 1.25rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .card:hover {
+        border-color: rgba(176, 141, 87, 0.5);
+        box-shadow: 0 2px 10px rgba(27, 67, 50, 0.05);
+      }
+      .card-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.75rem;
+        background: rgba(27, 67, 50, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .card-icon svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--forest);
+      }
+      .card h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.4rem;
+      }
+      .card p {
+        font-size: 0.875rem;
+        color: rgba(31, 45, 40, 0.7);
+      }
+
+      /* ===== Contact ===== */
+      #contact {
+        padding: 3rem 0;
+        scroll-margin-top: 5rem;
+      }
+      @media (min-width: 640px) {
+        #contact {
+          padding: 4rem 0;
+        }
+      }
+      #contact h2 {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+      }
+      @media (min-width: 640px) {
+        #contact h2 {
+          font-size: 1.875rem;
+        }
+      }
+      .contact-lead {
+        margin-top: 0.75rem;
+        color: rgba(31, 45, 40, 0.7);
+        max-width: 32rem;
+      }
+
+      .contact-grid {
+        margin-top: 2.5rem;
+        display: grid;
+        gap: 2.5rem;
+        align-items: start;
+      }
+      @media (min-width: 1024px) {
+        .contact-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+        }
+      }
+
+      .contact-methods {
+        margin-top: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .method {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #fff;
+        border: 1px solid rgba(27, 67, 50, 0.1);
+        border-radius: 1rem;
+        padding: 1rem;
+        transition: border-color 0.2s;
+      }
+      .method:hover {
+        border-color: rgba(176, 141, 87, 0.5);
+      }
+      .method .ic {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .method .ic svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      .ic-wa {
+        background: rgba(37, 211, 102, 0.1);
+      }
+      .ic-wa svg {
+        color: #25d366;
+      }
+      .ic-mail {
+        background: rgba(27, 67, 50, 0.08);
+      }
+      .ic-mail svg {
+        color: var(--forest);
+      }
+      .method .label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--forest);
+      }
+      .method .value {
+        font-size: 0.875rem;
+        color: rgba(31, 45, 40, 0.6);
+      }
+
+      .form-card {
+        background: #fff;
+        border: 1px solid rgba(27, 67, 50, 0.1);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(27, 67, 50, 0.05);
+      }
+      @media (min-width: 640px) {
+        .form-card {
+          padding: 2rem;
+        }
+      }
+
+      .field {
+        margin-bottom: 1rem;
+      }
+      .field label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--forest);
+        margin-bottom: 0.375rem;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid rgba(27, 67, 50, 0.15);
+        background: rgba(250, 247, 240, 0.4);
+        border-radius: 0.75rem;
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+        font-family: inherit;
+        color: var(--ink);
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        border-color: var(--forest);
+        box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.15);
+      }
+      .field textarea {
+        resize: none;
+      }
+
+      .submit {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1.25rem;
+      }
+
+      .confirmation {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2.5rem 0;
+      }
+      .confirmation.show {
+        display: flex;
+      }
+      .confirmation .check {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 9999px;
+        background: rgba(27, 67, 50, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .confirmation .check svg {
+        width: 1.75rem;
+        height: 1.75rem;
+        color: var(--forest);
+      }
+      .confirmation h3 {
+        font-size: 1.25rem;
+      }
+      .confirmation p {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: rgba(31, 45, 40, 0.6);
+      }
+      .confirmation button {
+        margin-top: 1.25rem;
+        font-size: 0.875rem;
+        color: var(--forest);
+        background: none;
+        border: none;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        cursor: pointer;
+      }
+      .confirmation button:hover {
+        color: var(--gold);
+      }
+
+      /* ===== Footer ===== */
+      footer {
+        border-top: 1px solid rgba(27, 67, 50, 0.1);
+        background: rgba(245, 241, 232, 0.5);
+      }
+      .footer-inner {
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      @media (min-width: 640px) {
+        .footer-inner {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+      .footer-name {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--forest);
+      }
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        font-size: 0.875rem;
+        color: rgba(31, 45, 40, 0.6);
+      }
+      .footer-links a:hover {
+        color: var(--forest);
+      }
+
+      /* ===== Fade-in animation ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== Header ===== -->
+    <header>
+      <div class="container nav">
+        <a href="#home" class="logo">Omar Hathat</a>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#subjects">Subjects</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn btn-primary">
+            Book a Session
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <svg id="menuIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary">
+          Book a Session
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== Hero ===== -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- REPLACE with your professional headshot -->
+            <div class="headshot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="reveal">
+              <p class="eyebrow">IB Tutor &amp; Engineer</p>
+              <h1>Omar Hathat</h1>
+              <p class="tagline">
+                Junior Engineer with 2+ years of remote IB Tutoring experience
+                in Mathematics (Analysis &amp; Applications), Physics, Chemistry,
+                and Business.
+              </p>
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                  Book a Session
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="https://wa.me/962792673505" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  WhatsApp
+                </a>
+                <a href="mailto:omarhathat8@gmail.com" class="btn btn-outline">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  Email
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Credentials -->
+          <div class="credentials reveal">
+            <div class="cred">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>BEng in Engineering</span>
+            </div>
+            <div class="cred">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              <span>MSc in Engineering with Finance</span>
+            </div>
+            <div class="cred">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              <span>IB Diploma graduate — Amman, Jordan</span>
+            </div>
+            <div class="cred">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>2+ years of tutoring experience</span>
+            </div>
+            <div class="cred">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>Online sessions only</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Subjects ===== -->
+      <section id="subjects">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">What I Teach</p>
+            <h2>Subjects &amp; Support</h2>
+          </div>
+          <div class="subject-grid">
+            <div class="card reveal">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg></div>
+              <h3>IB Mathematics</h3>
+              <p>Analysis &amp; Approaches and Applications &amp; Interpretation — topic mastery, past papers, and IA guidance.</p>
+            </div>
+            <div class="card reveal">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+              <h3>IB Business Management</h3>
+              <p>Case studies, exam technique, and Extended Essay support.</p>
+            </div>
+            <div class="card reveal">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.07-4.5-11.6-4.53-4.52-9.57-6.54-11.6-4.5-2.04 2.03-.02 7.07 4.5 11.6 4.53 4.52 9.57 6.54 11.6 4.5z"/><path d="M15.7 15.7c2.03-2.04.02-7.07-4.5-11.6"/></svg></div>
+              <h3>IB Physics</h3>
+              <p>Concept clarity, problem-solving, and structured internal assessment coaching.</p>
+            </div>
+            <div class="card reveal">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l4 7a3 3 0 0 1-2.5 4.5h-9A3 3 0 0 1 5 14l4-7V3z"/><line x1="9" y1="3" x2="15" y2="3"/></svg></div>
+              <h3>IB Chemistry</h3>
+              <p>Theory, calculations, and guided IA development.</p>
+            </div>
+            <div class="card reveal">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/></svg></div>
+              <h3>Internal Assessments (IA)</h3>
+              <p>Support across all subjects above — from topic choice to final write-up.</p>
+            </div>
+            <div class="card reveal">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+              <h3>Extended Essay</h3>
+              <p>Specialised guidance for Business Management Extended Essays.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Contact ===== -->
+      <section id="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left -->
+            <div class="reveal">
+              <p class="eyebrow">Get in Touch</p>
+              <h2>Let's plan your next session</h2>
+              <p class="contact-lead">
+                Reach out with your subject, level, and what you'd like to work
+                on. I'll get back to you to schedule a time that fits.
+              </p>
+              <div class="contact-methods">
+                <a href="https://wa.me/962792673505" target="_blank" rel="noopener noreferrer" class="method">
+                  <span class="ic ic-wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+                  <span>
+                    <span class="label">WhatsApp</span>
+                    <span class="value">+962 79 267 3505</span>
+                  </span>
+                </a>
+                <a href="mailto:omarhathat8@gmail.com" class="method">
+                  <span class="ic ic-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                  <span>
+                    <span class="label">Email</span>
+                    <span class="value">omarhathat8@gmail.com</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: form -->
+            <div class="reveal">
+              <div class="form-card">
+                <form id="contactForm">
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="you@email.com" required />
+                  </div>
+                  <div class="field">
+                    <label for="subject">Subject needed</label>
+                    <select id="subject" name="subject" required>
+                      <option value="" disabled selected>Select a subject</option>
+                      <option>IB Mathematics</option>
+                      <option>IB Business Management</option>
+                      <option>IB Physics</option>
+                      <option>IB Chemistry</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="3" placeholder="What would you like to work on?" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary submit">
+                    Send message
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </form>
+                <div class="confirmation" id="confirmation">
+                  <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <h3>Thanks — I'll get back to you soon.</h3>
+                  <p>Your message has been noted. Expect a reply shortly.</p>
+                  <button id="sendAnother">Send another message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <div class="container footer-inner">
+        <span class="footer-name">Omar Hathat</span>
+        <div class="footer-links">
+          <a href="mailto:omarhathat8@gmail.com">Email</a>
+          <a href="https://wa.me/962792673505" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <span>© <span id="year"></span></span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      var menuToggle = document.getElementById("menuToggle");
+      var mobileMenu = document.getElementById("mobileMenu");
+      var menuIcon = document.getElementById("menuIcon");
+      var openIcon = '<line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>';
+      var closeIcon = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>';
+
+      menuToggle.addEventListener("click", function () {
+        var isOpen = mobileMenu.classList.toggle("open");
+        menuIcon.innerHTML = isOpen ? closeIcon : openIcon;
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.remove("open");
+          menuIcon.innerHTML = openIcon;
+        });
+      });
+
+      // Contact form
+      var form = document.getElementById("contactForm");
+      var confirmation = document.getElementById("confirmation");
+      var sendAnother = document.getElementById("sendAnother");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        form.style.display = "none";
+        confirmation.classList.add("show");
+      });
+
+      sendAnother.addEventListener("click", function () {
+        form.reset();
+        confirmation.classList.remove("show");
+        form.style.display = "block";
+      });
+
+      // Auto year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Scroll-triggered fade-in
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+      );
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
